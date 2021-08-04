@@ -1,0 +1,150 @@
+html,
+body {
+  --color-1: #ffd3b6;
+  --color-2: #ffaaa5;
+  --color-3: #ff8b94;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding-top: 50px;
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  color: black;
+}
+
+.container {
+  width: 400px;
+  text-align: center;
+  margin: 0 auto;
+  background-color: white;
+  box-shadow: -2px 6px 18px 3px rgba(0, 0, 0, 0.75);
+  padding: 50px;
+}
+
+.players {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.dice {
+  border-radius: 10px;
+  width: 100px;
+  height: 100px;
+  background-color: var(--color-1);
+  margin: 0 auto;
+  font-size: 80px;
+  display: block;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  color: #fff;
+  padding: 20px 30px;
+  font-size: 20px;
+  margin: 40px auto;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#rollBtn {
+  background-color: var(--color-3);
+}
+
+#resetBtn {
+  background-color: var(--color-2);
+}
+
+button:focus {
+  outline: none;
+}
+
+#resetBtn {
+  display: none;
+}
+
+.active {
+  box-shadow: -2px 6px 18px 3px rgba(0, 0, 0, 0.75);
+}
+
+.p1 {
+  background: linear-gradient(
+    315deg,
+    #2b2d42,
+    #8d99ae,
+    #edf2f4,
+    #ef233c,
+    #d90429
+  );
+  background-size: 1000% 1000%;
+
+  animation: p1Animation 10s ease infinite;
+}
+
+@keyframes p1Animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 51%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.p2 {
+  background: linear-gradient(
+    45deg,
+    #ffbe0b,
+    #fb5607,
+    #ff006e,
+    #8338ec,
+    #3a86ff
+  );
+  background-size: 1000% 1000%;
+
+  animation: p2Animation 10s ease infinite;
+}
+
+@keyframes p2Animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.neutral {
+  background: linear-gradient(
+    202deg,
+    #006d77,
+    #83c5be,
+    #edf6f9,
+    #ffddd2,
+    #e29578
+  );
+  background-size: 1000% 1000%;
+
+  animation: neutralAnimation 10s ease infinite;
+}
+
+@keyframes neutralAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
