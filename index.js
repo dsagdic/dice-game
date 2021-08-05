@@ -6,16 +6,26 @@ const player2Dice = document.getElementById('player2Dice');
 const player1Scoreboard = document.getElementById('player1Scoreboard');
 const player2Scoreboard = document.getElementById('player2Scoreboard');
 const message = document.getElementById('message');
+const startBtn = document.getElementById('startBtn');
 const rollBtn = document.getElementById('rollBtn');
 const resetBtn = document.getElementById('resetBtn');
 const body = document.getElementById('body');
 
 body.classList.add('neutral');
+message.textContent = 'Dice Game 🎲';
 
 function showResetButton() {
   rollBtn.style.display = 'none';
   resetBtn.style.display = 'block';
 }
+
+startBtn.addEventListener('click', () => {
+  startBtn.style.display = 'none';
+  rollBtn.style.display = 'block';
+  player1Dice.classList.add('active');
+  body.classList.remove('neutral');
+  body.classList.add('p1');
+});
 
 rollBtn.addEventListener('click', () => {
   const randomNumber = Math.floor(Math.random() * 6) + 1;
@@ -24,12 +34,11 @@ rollBtn.addEventListener('click', () => {
     player1Score += randomNumber;
     player1Scoreboard.textContent = player1Score;
     player1Dice.textContent = randomNumber;
-    body.classList.remove('neutral');
-    body.classList.remove('p2');
-    body.classList.add('p1');
     player1Dice.classList.remove('active');
     player2Dice.classList.add('active');
     message.textContent = 'Player 2 Turn';
+    body.classList.remove('p1');
+    body.classList.add('p2');
   } else {
     player2Score += randomNumber;
     player2Scoreboard.textContent = player2Score;
@@ -40,6 +49,8 @@ rollBtn.addEventListener('click', () => {
     body.classList.remove('p1');
     body.classList.add('p2');
     message.textContent = 'Player 1 Turn';
+    body.classList.remove('p2');
+    body.classList.add('p1');
   }
 
   if (player1Score >= 20) {
@@ -60,9 +71,9 @@ resetBtn.addEventListener('click', () => {
   player2Scoreboard.textContent = 0;
   player1Dice.textContent = '-';
   player2Dice.textContent = '-';
-  message.textContent = 'Player 1 Turn';
+  message.textContent = 'Dice Game 🎲';
   resetBtn.style.display = 'none';
-  rollBtn.style.display = 'block';
+  startBtn.style.display = 'block';
   player2Dice.classList.remove('active');
   player1Dice.classList.add('active');
   body.classList.remove('p1');

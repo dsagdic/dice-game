@@ -53,10 +53,15 @@ button {
 
 #rollBtn {
   background-color: var(--color-3);
+  display: none;
 }
 
 #resetBtn {
   background-color: var(--color-2);
+}
+
+#startBtn {
+  background-color: #f6c6ea;
 }
 
 button:focus {
@@ -73,7 +78,7 @@ button:focus {
 
 .p1 {
   background: linear-gradient(
-    315deg,
+    270deg,
     #2b2d42,
     #8d99ae,
     #edf2f4,
@@ -82,7 +87,7 @@ button:focus {
   );
   background-size: 1000% 1000%;
 
-  animation: p1Animation 10s ease infinite;
+  animation: p1Animation 20s ease infinite;
 }
 
 @keyframes p1Animation {
@@ -90,7 +95,7 @@ button:focus {
     background-position: 0% 50%;
   }
   50% {
-    background-position: 100% 51%;
+    background-position: 100% 50%;
   }
   100% {
     background-position: 0% 50%;
@@ -99,7 +104,7 @@ button:focus {
 
 .p2 {
   background: linear-gradient(
-    45deg,
+    90deg,
     #ffbe0b,
     #fb5607,
     #ff006e,
@@ -108,7 +113,7 @@ button:focus {
   );
   background-size: 1000% 1000%;
 
-  animation: p2Animation 10s ease infinite;
+  animation: p2Animation 20s ease infinite;
 }
 
 @keyframes p2Animation {
@@ -134,7 +139,7 @@ button:focus {
   );
   background-size: 1000% 1000%;
 
-  animation: neutralAnimation 10s ease infinite;
+  animation: neutralAnimation 20s ease infinite;
 }
 
 @keyframes neutralAnimation {
